@@ -41,6 +41,30 @@ docs/memory/
 - Create `docs/memory/` lazily, on the first durable fact worth
   persisting, and say in your reply that you created it.
 
+## The index is not the memory (both backends)
+
+Whichever backend is active, the memory index (`memory/MEMORY.md` in FNS,
+`docs/memory/MEMORY.md` for files, or whatever index the project names)
+is loaded into every session. Keep it small.
+
+- One line per entry: `- [[target-note]] — short hook` (FNS) or
+  `- [Title](file.md) — short hook` (files). The hook says what the note
+  covers and when to read it, in roughly one short sentence.
+- All content goes in the target note: details, evidence, commands,
+  numbers, history, corrections. If no target note exists, create one
+  first, then add its index line.
+- When updating an existing memory, edit the target note. Touch the
+  index line only if its hook is no longer accurate. Never append
+  "update"/"correction" text to the index line.
+- Never put in the index: dated changelog blocks ("> 2026-10-14: added
+  ..."), multi-sentence or multi-paragraph entries, content that has no
+  target note, or session/release logs.
+- After writing, check that every index line you touched is still a
+  single short line. If the index has grown large (more than ~15 KB),
+  consolidate entries instead of adding more.
+- If the project's own instructions (AGENTS.md, CLAUDE.md) give stricter
+  index rules, follow those.
+
 ## Before working
 
 When historical project context may affect the task:
@@ -85,5 +109,6 @@ Before creating a new entry:
 2. Update it if one exists.
 3. Create a new entry only when necessary.
 4. Keep knowledge concise and factual.
-5. File backend: after adding or renaming a topic file, update the
-   corresponding line in `MEMORY.md`.
+5. After adding or renaming a topic note (either backend), update its
+   single line in the index — see
+   [The index is not the memory](#the-index-is-not-the-memory-both-backends).
