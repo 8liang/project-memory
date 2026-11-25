@@ -31,8 +31,8 @@ npx skills add 8liang/project-memory -g -y
 手动安装：
 
 ```bash
-git clone https://github.com/8liang/project-memory.git
-ln -s "$(pwd)/project-memory" "$HOME/.agents/skills/project-memory"
+git clone https://github.com/8liang/project-memory.git ~/Workspace/project-memory
+ln -s ~/Workspace/project-memory "$HOME/.agents/skills/project-memory"
 ```
 
 ## 使用
